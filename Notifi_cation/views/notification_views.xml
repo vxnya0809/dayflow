@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_notification_list" model="ir.ui.view">
+        <field name="name">hrms.notification.list</field>
+        <field name="model">hrms.notification</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="employeeId"/>
+                <field name="notificationType"/>
+                <field name="message"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_notification_form" model="ir.ui.view">
+        <field name="name">hrms.notification.form</field>
+        <field name="model">hrms.notification</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employeeId"/>
+                        <field name="notificationType"/>
+                        <field name="message"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_notification" model="ir.actions.act_window">
+        <field name="name">Notifications</field>
+        <field name="res_model">hrms.notification</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_hrms_notifications"
+        name="Notifications"
+        action="action_notification"
+        sequence="10"/>
+
+</odoo>

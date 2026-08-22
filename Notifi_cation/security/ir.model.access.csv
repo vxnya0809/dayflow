@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_notification_user,notification.user,model_hrms_notification,base.group_user,1,1,1,1
+access_task_clarification_user,task.clarification.user,model_hrms_task_clarification,base.group_user,1,1,1,1
+access_hr_status_user,hr.status.user,model_hrms_hr_status,base.group_user,1,1,1,1

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_hr_status_list" model="ir.ui.view">
+        <field name="name">hrms.hr.status.list</field>
+        <field name="model">hrms.hr.status</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="message"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_hr_status_form" model="ir.ui.view">
+        <field name="name">hrms.hr.status.form</field>
+        <field name="model">hrms.hr.status</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="message"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_status" model="ir.actions.act_window">
+        <field name="name">HR Support Status</field>
+        <field name="res_model">hrms.hr.status</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_hrms_hr_status"
+        name="HR Support"
+        action="action_hr_status"
+        sequence="30"/>
+
+</odoo>
