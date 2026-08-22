@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <!-- =====================================================
+         EMPLOYEE DASHBOARD ACTION
+         ===================================================== -->
+
+    <record id="action_employee_dashboard" model="ir.actions.client">
+
+        <field name="name">
+            Employee Dashboard
+        </field>
+
+        <field name="tag">
+            employee_dashboard
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         DAYFLOW MAIN MENU
+         ===================================================== -->
+
+    <menuitem
+        id="menu_dayflow_root"
+        name="DAYFLOW"
+        sequence="1"/>
+
+
+    <!-- =====================================================
+         EMPLOYEE DASHBOARD MENU
+         ===================================================== -->
+
+    <menuitem
+        id="menu_employee_dashboard"
+        name="Employee Dashboard"
+        parent="menu_dayflow_root"
+        action="action_employee_dashboard"
+        sequence="1"/>
+
+
+    <!-- =====================================================
+         PROFILE MENU
+         ===================================================== -->
+
+    <menuitem
+        id="menu_dayflow_profile"
+        name="My Profile"
+        parent="menu_dayflow_root"
+        action="action_employee"
+        sequence="10"/>
+
+
+    <!-- =====================================================
+         LEAVE MENU
+         ===================================================== -->
+
+    <menuitem
+        id="menu_dayflow_leave"
+        name="My Leave"
+        parent="menu_dayflow_root"
+        action="action_leave_request"
+        sequence="20"/>
+    <template
+    id="employee_dashboard_template"
+    name="Employee Dashboard"
+    t-name="employee_module.EmployeeDashboard"
+    owl="1">
+
+    <div class="dayflow-dashboard">
+
+        <!-- =========================================
+             TOP HEADER
+             ========================================= -->
+
+        <div class="dayflow-dashboard-header">
+
+            <div>
+
+                <div class="dayflow-brand">
+                    DAYFLOW
+                </div>
+
+                <h1>
+                    Employee Dashboard
+                </h1>
+
+                <p>
+                    Your work life, organized in one place.
+                </p>
+
+            </div>
+
+            <div class="dayflow-header-status">
+                ● SYSTEM ONLINE
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             WELCOME
+             ========================================= -->
+
+        <div class="dayflow-welcome">
+
+            <div>
+
+                <span>
+                    Welcome back
+                </span>
+
+                <h2>
+                    Rahul Kumar
+                </h2>
+
+                <p>
+                    Here's your employee overview for today.
+                </p>
+
+            </div>
+
+            <div class="dayflow-welcome-orb">
+                E
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             STAT CARDS
+             ========================================= -->
+
+        <div class="dayflow-dashboard-grid">
+
+
+            <div class="dayflow-dashboard-card">
+
+                <div class="dayflow-card-icon">
+                    ✓
+                </div>
+
+                <span>
+                    ATTENDANCE
+                </span>
+
+                <strong>
+                    90%
+                </strong>
+
+                <small>
+                    Current attendance rate
+                </small>
+
+            </div>
+
+
+            <div class="dayflow-dashboard-card">
+
+                <div class="dayflow-card-icon">
+                    P
+                </div>
+
+                <span>
+                    PAID LEAVE
+                </span>
+
+                <strong>
+                    12
+                </strong>
+
+                <small>
+                    Days remaining
+                </small>
+
+            </div>
+
+
+            <div class="dayflow-dashboard-card">
+
+                <div class="dayflow-card-icon">
+                    S
+                </div>
+
+                <span>
+                    SICK LEAVE
+                </span>
+
+                <strong>
+                    10
+                </strong>
+
+                <small>
+                    Days remaining
+                </small>
+
+            </div>
+
+
+            <div class="dayflow-dashboard-card">
+
+                <div class="dayflow-card-icon">
+                    !
+                </div>
+
+                <span>
+                    PENDING
+                </span>
+
+                <strong>
+                    1
+                </strong>
+
+                <small>
+                    Leave request awaiting approval
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             QUICK ACTIONS
+             ========================================= -->
+
+        <div class="dayflow-section-title">
+
+            <span>
+                QUICK ACTIONS
+            </span>
+
+        </div>
+
+
+        <div class="dayflow-actions">
+
+
+            <div class="dayflow-action-card">
+
+                <div class="dayflow-action-symbol">
+                    +
+                </div>
+
+                <div>
+
+                    <strong>
+                        Apply Leave
+                    </strong>
+
+                    <p>
+                        Submit a new leave request
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dayflow-action-card">
+
+                <div class="dayflow-action-symbol">
+                    ◉
+                </div>
+
+                <div>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <p>
+                        View your employee information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================================
+             RECENT REQUESTS
+             ========================================= -->
+
+        <div class="dayflow-section-title">
+
+            <span>
+                RECENT LEAVE REQUESTS
+            </span>
+
+        </div>
+
+
+        <div class="dayflow-request-list">
+
+
+            <div class="dayflow-request">
+
+                <div>
+
+                    <strong>
+                        Paid Leave
+                    </strong>
+
+                    <span>
+                        25 Aug → 26 Aug
+                    </span>
+
+                </div>
+
+                <div class="dayflow-pending">
+                    PENDING
+                </div>
+
+            </div>
+
+
+            <div class="dayflow-request">
+
+                <div>
+
+                    <strong>
+                        Sick Leave
+                    </strong>
+
+                    <span>
+                        10 Aug → 10 Aug
+                    </span>
+
+                </div>
+
+                <div class="dayflow-approved">
+                    APPROVED
+                </div>
+
+            </div>
+
+
+            <div class="dayflow-request">
+
+                <div>
+
+                    <strong>
+                        Casual Leave
+                    </strong>
+
+                    <span>
+                        18 Jul → 18 Jul
+                    </span>
+
+                </div>
+
+                <div class="dayflow-rejected">
+                    REJECTED
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</template>
+
+
+</odoo>

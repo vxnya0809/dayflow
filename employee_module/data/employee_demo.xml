@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <!-- =====================================================
+         DEMO EMPLOYEE
+         ===================================================== -->
+
+    <record id="employee_demo_rahul" model="employee">
+
+        <field name="name">Rahul Kumar</field>
+
+        <field name="email">
+            rahul.kumar@dayflow.com
+        </field>
+
+        <field name="phone">
+            +91 98765 43210
+        </field>
+
+        <field name="dateOfBirth">
+            2003-05-15
+        </field>
+
+        <field name="address">
+            Bengaluru, Karnataka
+        </field>
+
+        <field name="employeeId">
+            DF001
+        </field>
+
+        <field name="department">
+            Engineering
+        </field>
+
+        <field name="designation">
+            Software Engineer
+        </field>
+
+        <field name="joiningDate">
+            2025-06-10
+        </field>
+
+        <field name="manager">
+            Priya Sharma
+        </field>
+
+        <field name="employmentType">
+            full_time
+        </field>
+
+        <field name="status">
+            active
+        </field>
+
+        <field name="profileCompletion">
+            92
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         SECOND DEMO EMPLOYEE
+         ===================================================== -->
+
+    <record id="employee_demo_priya" model="employee">
+
+        <field name="name">
+            Priya Sharma
+        </field>
+
+        <field name="email">
+            priya.sharma@dayflow.com
+        </field>
+
+        <field name="phone">
+            +91 98765 12345
+        </field>
+
+        <field name="dateOfBirth">
+            2001-08-20
+        </field>
+
+        <field name="address">
+            Chennai, Tamil Nadu
+        </field>
+
+        <field name="employeeId">
+            DF002
+        </field>
+
+        <field name="department">
+            Human Resources
+        </field>
+
+        <field name="designation">
+            HR Manager
+        </field>
+
+        <field name="joiningDate">
+            2024-04-01
+        </field>
+
+        <field name="manager">
+            Administration
+        </field>
+
+        <field name="employmentType">
+            full_time
+        </field>
+
+        <field name="status">
+            active
+        </field>
+
+        <field name="profileCompletion">
+            100
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         THIRD DEMO EMPLOYEE
+         ===================================================== -->
+
+    <record id="employee_demo_arun" model="employee">
+
+        <field name="name">
+            Arun Kumar
+        </field>
+
+        <field name="email">
+            arun.kumar@dayflow.com
+        </field>
+
+        <field name="phone">
+            +91 98765 67890
+        </field>
+
+        <field name="dateOfBirth">
+            2002-11-12
+        </field>
+
+        <field name="address">
+            Hyderabad, Telangana
+        </field>
+
+        <field name="employeeId">
+            DF003
+        </field>
+
+        <field name="department">
+            Finance
+        </field>
+
+        <field name="designation">
+            Financial Analyst
+        </field>
+
+        <field name="joiningDate">
+            2025-01-15
+        </field>
+
+        <field name="manager">
+            Priya Sharma
+        </field>
+
+        <field name="employmentType">
+            full_time
+        </field>
+
+        <field name="status">
+            active
+        </field>
+
+        <field name="profileCompletion">
+            85
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         DEMO LEAVE — PENDING
+         ===================================================== -->
+
+    <record
+        id="leave_demo_pending"
+        model="leave.request">
+
+        <field name="employeeId"
+               ref="employee_demo_rahul"/>
+
+        <field name="leaveType">
+            paid
+        </field>
+
+        <field name="startDate">
+            2026-08-25
+        </field>
+
+        <field name="endDate">
+            2026-08-26
+        </field>
+
+        <field name="reason">
+            Personal work
+        </field>
+
+        <field name="status">
+            pending
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         DEMO LEAVE — APPROVED
+         ===================================================== -->
+
+    <record
+        id="leave_demo_approved"
+        model="leave.request">
+
+        <field name="employeeId"
+               ref="employee_demo_rahul"/>
+
+        <field name="leaveType">
+            sick
+        </field>
+
+        <field name="startDate">
+            2026-08-10
+        </field>
+
+        <field name="endDate">
+            2026-08-10
+        </field>
+
+        <field name="reason">
+            Medical appointment
+        </field>
+
+        <field name="status">
+            approved
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         DEMO LEAVE — REJECTED
+         ===================================================== -->
+
+    <record
+        id="leave_demo_rejected"
+        model="leave.request

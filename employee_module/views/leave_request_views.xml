@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <!-- =====================================================
+         LEAVE REQUEST LIST
+         ===================================================== -->
+
+    <record id="view_leave_request_list" model="ir.ui.view">
+
+        <field name="name">leave.request.list</field>
+        <field name="model">leave.request</field>
+
+        <field name="arch" type="xml">
+
+            <list string="My Leave Requests">
+
+                <field name="employeeId"/>
+                <field name="leaveType"/>
+                <field name="startDate"/>
+                <field name="endDate"/>
+                <field name="duration"/>
+                <field name="reason"/>
+                <field name="status"/>
+
+            </list>
+
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         LEAVE REQUEST FORM
+         ===================================================== -->
+
+    <record id="view_leave_request_form" model="ir.ui.view">
+
+        <field name="name">leave.request.form</field>
+        <field name="model">leave.request</field>
+
+        <field name="arch" type="xml">
+
+            <form string="Apply for Leave">
+
+                <sheet>
+
+                    <!-- HERO -->
+
+                    <div class="dayflow-leave-hero">
+
+                        <div class="dayflow-leave-icon">
+                            +
+                        </div>
+
+                        <div>
+
+                            <h1>
+                                Apply for Leave
+                            </h1>
+
+                            <p>
+                                Submit your leave request
+                                for HR approval.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LEAVE DETAILS -->
+
+                    <group string="Leave Details">
+
+                        <group>
+
+                            <field
+                                name="employeeId"
+                                options="{'no_create': True}"/>
+
+                            <field
+                                name="leaveType"/>
+
+                            <field
+                                name="reason"
+                                placeholder="Tell HR why you need leave..."/>
+
+                        </group>
+
+
+                        <group>
+
+                            <field
+                                name="startDate"/>
+
+                            <field
+                                name="endDate"/>
+
+                            <field
+                                name="duration"
+                                readonly="1"/>
+
+                            <field
+                                name="status"
+                                readonly="1"/>
+
+                        </group>
+
+                    </group>
+
+
+                    <!-- STATUS CARD -->
+
+                    <div class="dayflow-leave-status">
+
+                        <span>
+                            Request Status
+                        </span>
+
+                        <strong>
+
+                            <field name="status"/>
+
+                        </strong>
+
+                    </div>
+
+
+                    <!-- INFORMATION -->
+
+                    <div class="dayflow-leave-info">
+
+                        <strong>
+                            Leave types available
+                        </strong>
+
+                        <span>
+                            Paid Leave
+                        </span>
+
+                        <span>
+                            Sick Leave
+                        </span>
+
+                        <span>
+                            Casual Leave
+                        </span>
+
+                    </div>
+
+                </sheet>
+
+            </form>
+
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         LEAVE ACTION
+         ===================================================== -->
+
+    <record
+        id="action_leave_request"
+        model="ir.actions.act_window">
+
+        <field name="name">
+            Leave Requests
+        </field>
+
+        <field name="res_model">
+            leave.request
+        </field>
+
+        <field name="view_mode">
+            list,form
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         LEAVE MENU
+         ===================================================== -->
+
+    <menuitem
+        id="menu_leave_request"
+        name="My Leave"
+        action="action_leave_request"
+        sequence="20"/>
+
+</odoo>

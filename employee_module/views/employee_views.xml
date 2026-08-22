@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <!-- =====================================================
+         EMPLOYEE LIST VIEW
+         ===================================================== -->
+
+    <record id="view_employee_list" model="ir.ui.view">
+
+        <field name="name">employee.list</field>
+        <field name="model">employee</field>
+
+        <field name="arch" type="xml">
+
+            <list string="Employees">
+
+                <field name="employeeId"/>
+                <field name="name"/>
+                <field name="designation"/>
+                <field name="department"/>
+                <field name="email"/>
+                <field name="status"/>
+                <field name="profileCompletion"/>
+
+            </list>
+
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         EMPLOYEE PROFILE FORM
+         ===================================================== -->
+
+    <record id="view_employee_form" model="ir.ui.view">
+
+        <field name="name">employee.form</field>
+        <field name="model">employee</field>
+
+        <field name="arch" type="xml">
+
+            <form string="Employee Profile">
+
+                <sheet>
+
+                    <!-- ===============================
+                         PROFILE HERO
+                         =============================== -->
+
+                    <div class="dayflow-employee-hero">
+
+                        <div class="dayflow-avatar">
+
+                            <span>
+                                E
+                            </span>
+
+                        </div>
+
+
+                        <div class="dayflow-identity">
+
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+
+                            <div class="dayflow-designation">
+
+                                <field name="designation"/>
+
+                            </div>
+
+                            <div class="dayflow-id">
+
+                                Employee ID:
+                                <field name="employeeId"/>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="dayflow-status">
+
+                            ●
+                            <field name="status"/>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ===============================
+                         QUICK STATS
+                         =============================== -->
+
+                    <div class="dayflow-stats">
+
+                        <div class="dayflow-stat-card">
+
+                            <div class="dayflow-stat-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    PROFILE
+                                </span>
+
+                                <strong>
+
+                                    <field
+                                        name="profileCompletion"/>
+
+                                    %
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="dayflow-stat-card">
+
+                            <div class="dayflow-stat-icon">
+                                ID
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    EMPLOYEE ID
+                                </span>
+
+                                <strong>
+
+                                    <field
+                                        name="employeeId"/>
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="dayflow-stat-card">
+
+                            <div class="dayflow-stat-icon">
+                                HR
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    DEPARTMENT
+                                </span>
+
+                                <strong>
+
+                                    <field
+                                        name="department"/>
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ===============================
+                         PROFILE DETAILS
+                         =============================== -->
+
+                    <notebook>
+
+                        <page string="Personal Information">
+
+                            <group>
+
+                                <group>
+
+                                    <field name="name"/>
+
+                                    <field name="dateOfBirth"/>
+
+                                    <field name="email"/>
+
+                                    <field name="phone"/>
+
+                                </group>
+
+
+                                <group>
+
+                                    <field name="employeeId"/>
+
+                                    <field name="address"/>
+
+                                    <field name="status"/>
+
+                                </group>
+
+                            </group>
+
+                        </page>
+
+
+                        <!-- ===========================
+                             WORK INFORMATION
+                             =========================== -->
+
+                        <page string="Work Information">
+
+                            <group>
+
+                                <group>
+
+                                    <field name="department"/>
+
+                                    <field name="designation"/>
+
+                                    <field name="manager"/>
+
+                                </group>
+
+
+                                <group>
+
+                                    <field name="joiningDate"/>
+
+                                    <field name="employmentType"/>
+
+                                    <field name="profileCompletion"/>
+
+                                </group>
+
+                            </group>
+
+
+                            <!-- PROFILE COMPLETION -->
+
+                            <div class="dayflow-completion">
+
+                                <div class="dayflow-completion-header">
+
+                                    <span>
+                                        Profile Completion
+                                    </span>
+
+                                    <strong>
+
+                                        <field
+                                            name="profileCompletion"/>
+
+                                        %
+
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="dayflow-progress">
+
+                                    <div
+                                        class="dayflow-progress-fill">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+
+            </form>
+
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         EMPLOYEE ACTION
+         ===================================================== -->
+
+    <record
+        id="action_employee"
+        model="ir.actions.act_window">
+
+        <field name="name">
+            Employees
+        </field>
+
+        <field name="res_model">
+            employee
+        </field>
+
+        <field name="view_mode">
+            list,form
+        </field>
+
+    </record>
+
+
+    <!-- =====================================================
+         EMPLOYEE MENU
+         ===================================================== -->
+
+    <menuitem
+        id="menu_employee"
+        name="Employees"
+        action="action_employee"
+        sequence="10"/>
+
+</odoo>
