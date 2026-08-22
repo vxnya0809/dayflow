@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_attendance_user,attendance.user,model_attendance,base.group_user,1,1,1,1
+access_payroll_user,payroll.user,model_payroll,base.group_user,1,1,1,1
